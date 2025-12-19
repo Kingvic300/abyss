@@ -57,9 +57,9 @@ export function HeroSection() {
                 className="size-full object-cover"
                 src="/sky-bg.png"
               />
-              <div className="bg-gradient-to-r from-background absolute inset-y-0 left-0 w-1/3"></div>
+              <div className="bg-gradient-to-r from-background absolute inset-y-0 left-0 w-1/2"></div>
               <ProgressiveBlur
-                className="pointer-events-none absolute left-0 top-0 h-full w-1/3"
+                className="pointer-events-none absolute left-0 top-0 h-full w-1/2"
                 direction="left"
                 blurIntensity={3}
               />

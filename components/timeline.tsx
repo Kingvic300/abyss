@@ -52,7 +52,7 @@ const timelineItemVariants = cva("relative flex gap-3 pb-2", {
 const timelineConnectorVariants = cva("bg-border", {
   variants: {
     orientation: {
-      vertical: "absolute left-3 top-9 h-full w-px",
+      vertical: "absolute left-5 top-12 h-full w-px",
       horizontal: "absolute top-3 left-8 w-full h-px",
     },
     status: {
@@ -70,7 +70,7 @@ const timelineConnectorVariants = cva("bg-border", {
 });
 
 const timelineIconVariants = cva(
-  "flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 bg-background text-xs font-medium",
+  "flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 bg-background text-sm font-medium",
   {
     variants: {
       status: {
@@ -109,15 +109,15 @@ export interface TimelineProps extends VariantProps<typeof timelineVariants> {
 function getStatusIcon(status: TimelineItem["status"]) {
   switch (status) {
     case "completed":
-      return <Check className="h-3 w-3" />;
+      return <Check className="h-5 w-5" />;
     case "active":
-      return <Clock className="h-3 w-3" />;
+      return <Clock className="h-5 w-5" />;
     case "pending":
-      return <Clock className="h-3 w-3" />;
+      return <Clock className="h-5 w-5" />;
     case "error":
-      return <X className="h-3 w-3" />;
+      return <X className="h-5 w-5" />;
     default:
-      return <div className="h-2 w-2 rounded-full bg-current" />;
+      return <div className="h-3 w-3 rounded-full bg-current" />;
   }
 }
 
@@ -223,12 +223,8 @@ export function Timeline({
 
   if (orientation === "horizontal") {
     return (
-      <ScrollArea
-        orientation="horizontal"
-        className={cn("w-full", className)}
-        {...props}
-      >
-        {timelineContent}
+      <ScrollArea className={cn("w-full", className)}>
+        <div {...props}>{timelineContent}</div>
       </ScrollArea>
     );
   }
