@@ -31,7 +31,7 @@ export function HeroSection() {
                     size="lg"
                     className="h-12 rounded-full pl-5 pr-3 text-base"
                   >
-                    <Link href="#link">
+                    <Link href="/airdrop">
                       <span className="text-nowrap">
                         Create Your First Drop
                       </span>
